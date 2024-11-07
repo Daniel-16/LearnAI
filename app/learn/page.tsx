@@ -76,7 +76,7 @@ export default function Learn() {
     setLoading(true);
     try {
       const genAI = new GoogleGenerativeAI(
-        "AIzaSyCo7ypFcmFxscee_xJl23hiT3ya4T2dsWY"
+        process.env.NEXT_PUBLIC_GOOGLE_API_KEY || ""
       );
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
 
