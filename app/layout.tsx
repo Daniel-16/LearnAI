@@ -1,15 +1,16 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from '@/components/theme-provider';
-import { Toaster } from '@/components/ui/sonner';
-import Navbar from '@/components/navbar';
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/navbar";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'AI-Learn - Smart PDF Learning Assistant',
-  description: 'Transform your PDF documents into interactive learning experiences with AI-powered explanations and insights.',
+  title: "AI-Learn - Smart PDF Learning Assistant",
+  description:
+    "Transform your PDF handouts into interactive learning experiences with AI-powered explanations and insights.",
 };
 
 export default function RootLayout({
