@@ -10,6 +10,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import Image from "next/image";
 import "@/lib/pdf-worker";
 import { toast } from "sonner";
+import { ResponseFormatter } from "@/components/ResponseFormatter";
 
 export default function Learn() {
   const [numPages, setNumPages] = useState<number>(0);
@@ -86,10 +87,10 @@ export default function Learn() {
 ${pageText}
 """
 
-Please answer this question about the passage above: ${question}`;
+Correctly answer the question above. You are a professional and no room for errors. Also sound so enthusiastic ${question}`;
 
       const result = await model.generateContent(prompt);
-      const response = await result.response;
+      const response = result.response;
       setAnswer(response.text());
     } catch (error) {
       console.error("Error getting answer:", error);
@@ -159,7 +160,7 @@ Please answer this question about the passage above: ${question}`;
             </div>
             {loading && <p className="text-muted-foreground">Thinking...</p>}
             {answer && (
-              <Textarea value={answer} readOnly className="min-h-[200px]" />
+              <Textarea value={answer} readOnly className="min-h-[400px]" />
             )}
           </div>
         </div>

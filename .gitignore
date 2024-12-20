@@ -36,3 +36,4 @@ next-env.d.ts
 
 # Allow PDF worker file
 !public/pdf.worker.min.js
+.env
