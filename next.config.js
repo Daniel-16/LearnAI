@@ -14,7 +14,7 @@ const nextConfig = {
       ...config.resolve.alias,
     };
     
-    // Add rule for PDF worker
+    // Add rule for PDF worker!
     config.module.rules.push({
       test: /pdf\.worker\.js$/,
       type: 'asset/resource'
